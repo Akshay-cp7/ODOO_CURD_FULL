@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_fk_faculty_tree" model="ir.ui.view">
+            <field name="name">fk.faculty.tree</field>
+            <field name="model">fk.faculty</field>
+            <field name="arch" type="xml">
+                <tree string="Faculties">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="dept_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_fk_faculty_form" model="ir.ui.view">
+            <field name="name">fk.faculty.form</field>
+            <field name="model">fk.faculty</field>
+            <field name="arch" type="xml">
+                <form string="Faculty">
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="code"/>
+                            <field name="dept_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_fk_faculty" model="ir.actions.act_window">
+            <field name="name">Faculties</field>
+            <field name="res_model">fk.faculty</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

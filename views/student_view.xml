@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_student_tree" model="ir.ui.view">
+            <field name="name">student.tree</field>
+            <field name="model">fk.student</field>
+            <field name="arch" type="xml">
+                <tree string="Student">
+                    <field name="roll_no"/>
+                    <field name="name"/>
+                    <field name="dob"/>
+                    <field name="batch_id"/>
+                </tree>
+            </field>
+        </record>
+    
+        <record id="view_student_form" model="ir.ui.view">
+            <field name="name">collage.form</field>
+            <field name="model">fk.student</field>
+            <field name="arch" type="xml">
+                <form string="Student">
+                    <group>
+                        <field name="roll_no"/>
+                        <field name="name"/>
+                        <field name="dob"/>
+                        <field name="phone"/>
+                        <field name="batch_id"/>
+
+                    </group>
+                    <group string="Classes">
+                        <field name="classes_ids" widget="many2many_tags"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    
+    <record id="action_student_view_studs" model="ir.actions.act_window">
+        <field name="name">Student_data</field>
+        <field name="res_model">fk.student</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                No Name of student found
+            </p><p>
+                The names arent filled yet.
+            </p>
+        </field>
+    </record>
+</odoo>

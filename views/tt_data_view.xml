@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_tt_data_tree" model="ir.ui.view">
+            <field name="name">tt.data.tree</field>
+            <field name="model">fk.timetable</field>
+            <field name="arch" type="xml">
+                <tree string="Classroom Schedule">
+                    <field name="name"/>
+                    <field name="hour"/>
+                    <field name="day"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_tt_data_form" model="ir.ui.view">
+            <field name="name">tt.data.form</field>
+            <field name="model">fk.timetable</field>
+            <field name="arch" type="xml">
+                <form string="Classroom Schedule">
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="hour" required="1"/>
+                            <field name="day" required="1"/>
+                        </group>
+                        <group string="Classes">
+                            <field name="classes_ids" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_tt_data" model="ir.actions.act_window">
+            <field name="name">Classroom Schedule</field>
+            <field name="res_model">fk.timetable</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,44 @@
+<odoo>
+    
+
+    <!-- Tree View -->
+    <record id="view_timetable_tree" model="ir.ui.view">
+        <field name="name">fk_tt_tree</field>
+        <field name="model">fk.timetbl</field>
+        <field name="arch" type="xml">
+            <tree string="Timetable">
+                <field name="name"/>
+                <field name="start"/>
+                <field name="end"/>
+                <field name="semester"/>
+                <field name="level"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_timetable_form" model="ir.ui.view">
+        <field name="name">fk_tt_form</field>
+        <field name="model">fk.timetbl</field>
+        <field name="arch" type="xml">
+            <form string="Timetable">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="start"/>
+                        <field name="end"/>
+                        <field name="semester"/>
+                        <field name="level"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+   <!-- Action -->
+   <record id="action_timetable" model="ir.actions.act_window">
+    <field name="name">Timetable</field>
+    <field name="res_model">fk.timetbl</field>
+    <field name="view_mode">tree,form</field>
+</record>
+</odoo>

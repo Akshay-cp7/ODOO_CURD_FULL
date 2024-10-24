@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Tree View -->
+        <record id="view_fk_batch_tree" model="ir.ui.view">
+            <field name="name">fk.batch.tree</field>
+            <field name="model">fk.batch</field>
+            <field name="arch" type="xml">
+                <tree string="Batch List">
+                    <field name="name"/>
+                    <field name="semester"/>
+                    <field name="coordinator"/>
+                    <field name="program_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_fk_batch_form" model="ir.ui.view">
+            <field name="name">fk.batch.form</field>
+            <field name="model">fk.batch</field>
+            <field name="arch" type="xml">
+                <form string="Batch Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="start_year"/>
+                            <field name="semester"/>
+                            <field name="coordinator"/>
+                            <field name="program_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_student_view_batch" model="ir.actions.act_window">
+            <field name="name">Batches</field>
+            <field name="res_model">fk.batch</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_fk_batch_tree"/>
+        </record>
+
+
+    </data>
+</odoo>

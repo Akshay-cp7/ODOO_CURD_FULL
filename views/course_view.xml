@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+
+        <!-- Tree View -->
+        <record id="view_fk_course_tree" model="ir.ui.view">
+            <field name="name">fk_course_tree</field>
+            <field name="model">fk.course</field>
+            <field name="arch" type="xml">
+                <tree string="Course List">
+                    <field name="name"/>
+                    <field name="year_of_admission"/>
+                    <field name="level"/>
+                    <field name="course_code"/>
+                    <field name="semester"/>
+                    <field name="department_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_fk_course_form" model="ir.ui.view">
+            <field name="name">fk_course_form</field>
+            <field name="model">fk.course</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="year_of_admission" required="1"/>
+                            <field name="level" required="1"/>
+                            <field name="course_code" required="1"/>
+                            <field name="semester" required="1"/>
+                            <field name="department_id" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_fk_course" model="ir.actions.act_window">
+            <field name="name">Courses</field>
+            <field name="res_model">fk.course</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_fk_course_tree"/>
+        </record>
+
+    </data>
+</odoo>

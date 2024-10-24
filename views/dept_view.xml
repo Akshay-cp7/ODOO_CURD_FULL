@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Tree View -->
+        <record id="view_fk_dept_tree" model="ir.ui.view">
+            <field name="name">fk.dept.tree</field>
+            <field name="model">fk.dept</field>
+            <field name="arch" type="xml">
+                <tree string="Department List">
+                    <field name="name"/>
+                    <field name="is_self"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_fk_dept_form" model="ir.ui.view">
+            <field name="name">fk.dept.form</field>
+            <field name="model">fk.dept</field>
+            <field name="arch" type="xml">
+                <form string="Department Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="is_self"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_fk_dept" model="ir.actions.act_window">
+            <field name="name">Departmens</field>
+            <field name="res_model">fk.dept</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_fk_dept_tree"/>
+        </record>
+
+       
+    </data>
+</odoo>

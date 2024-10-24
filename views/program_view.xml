@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="view_program_tree" model="ir.ui.view">
+        <field name="name">program_tree</field>
+        <field name="model">fk.program</field>
+        <field name="arch" type="xml">
+            <tree string="Program">
+                <field name="name"/>
+                <field name="is_self"/>
+                <field name="duration"/>
+                <field name="department_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_program_form" model="ir.ui.view">
+        <field name="name">program_form</field>
+        <field name="model">fk.program</field>
+        <field name="arch" type="xml">
+            <form string="Program">
+                <group>
+                    <field name="name"/>
+                    <field name="level"/>
+                    <field name="is_self"/>
+                    <field name="duration"/>
+                    <field name="department_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_program_view" model="ir.actions.act_window">
+        <field name="name">Program Data</field>
+        <field name="res_model">fk.program</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                No programs found.
+            </p>
+            <p>
+                Please create a new program.
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_of_student_root"
+    name="Collage management"/>
+
+    <menuitem id="collage_data"
+    name="Collage data"
+    parent="menu_of_student_root"
+    
+    />
+
+    <menuitem id="name_of_student"
+    name="Edit Student"
+    parent="collage_data"
+    action="action_student_view_studs"
+    />
+
+    <menuitem id="name_of_department"
+    name="Edit Batch"
+    parent="collage_data"
+    action="action_student_view_batch"
+    />
+
+    <menuitem id="name_of_program"
+    name="Edit Program"
+    parent="collage_data"
+    action="action_program_view"
+    />
+    
+    <menuitem id="name_of_dept"
+    name="Edit Department"
+    parent="collage_data"
+    action="action_fk_dept"
+    />
+
+    <menuitem id="name_of_course"
+    name="Edit Course"
+    parent="collage_data"
+    action="action_fk_course"
+    />
+    
+    <menuitem id="name_of_class"
+    name="Edit Class"
+    parent="collage_data"
+    action="action_classes"
+    />
+
+    <menuitem id="name_of_faculty"
+    name="Edit Faculty"
+    parent="collage_data"
+    action="action_fk_faculty"
+    />
+
+    <menuitem id="name_of_timetable"
+    name="Edit Timetable"
+    parent="collage_data"
+    action="action_tt_data"
+    />
+
+    <menuitem id="Timetable"
+    name="Timetable"
+    parent="collage_data"
+    action="action_timetable"
+    />
+    
+</odoo>
